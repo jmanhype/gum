@@ -13,23 +13,25 @@
       
       
       
+        <link rel="prev" href="../..">
       
-        <link rel="next" href="tutorials/mcp/">
+      
+        <link rel="next" href="../slackbot/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>GUM Documentation</title>
+        <title>Model Context Protocol - GUM Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#general-user-models" class="md-skip">
+        <a href="#using-mcps-to-connect-to-gums" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="GUM Documentation" class="md-header__button md-logo" aria-label="GUM Documentation" data-md-component="logo">
+    <a href="../.." title="GUM Documentation" class="md-header__button md-logo" aria-label="GUM Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Getting Started
+              Model Context Protocol
             
           </span>
         </div>
@@ -196,11 +198,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -217,11 +217,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="tutorials/mcp/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -241,7 +243,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="api-reference/core/" class="md-tabs__link">
+        <a href="../../api-reference/core/" class="md-tabs__link">
           
   
   
@@ -264,9 +266,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -277,7 +277,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="GUM Documentation" class="md-nav__button md-logo" aria-label="GUM Documentation" data-md-component="logo">
+    <a href="../.." title="GUM Documentation" class="md-nav__button md-logo" aria-label="GUM Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -304,19 +304,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -327,7 +318,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -336,28 +326,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -370,7 +363,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -381,10 +374,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="tutorials/mcp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -395,6 +397,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -407,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/gumbo.md" class="md-nav__link">
+      <a href="../gumbo.md" class="md-nav__link">
         
   
   
@@ -430,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/slackbot/" class="md-nav__link">
+      <a href="../slackbot/" class="md-nav__link">
         
   
   
@@ -453,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/reflection.md" class="md-nav__link">
+      <a href="../reflection.md" class="md-nav__link">
         
   
   
@@ -528,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api-reference/core/" class="md-nav__link">
+      <a href="../../api-reference/core/" class="md-nav__link">
         
   
   
@@ -551,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api-reference/models/" class="md-nav__link">
+      <a href="../../api-reference/models/" class="md-nav__link">
         
   
   
@@ -574,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api-reference/observers/" class="md-nav__link">
+      <a href="../../api-reference/observers/" class="md-nav__link">
         
   
   
@@ -605,9 +608,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -630,93 +631,22 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
-
-
-  
-  
-
-
-<!-- ![DSPy](static/img/dspy_logo.png){ width="200", align=left } -->
-
-<h1 id="general-user-models">General User Models<a class="headerlink" href="#general-user-models" title="Permanent link">&para;</a></h1>
-<!-- [![PyPI Downloads](https://static.pepy.tech/badge/dspy/month)](https://pepy.tech/projects/dspy) -->
-
-<p>General User Models learn about you by observing <em>any</em> interaction you have with your computer. The GUM takes as input any unstructured observation of a user (e.g., device screenshots) and constructs confidence-weighted propositions that capture the user's knowledge and preferences. GUMs introduce an architecture that infers new propositions about a user from multimodal observations, retrieves related propositions for context, and continuously revises existing propositions.</p>
-<p><em>tl;dr</em> Everything you do can be used to make your systems more context-aware.</p>
-<h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
-<p>First, you'll need to install the GUM package. There are two ways to do it:</p>
-<div class="admonition info">
-<p class="admonition-title">Getting Started I: Installing the GUM package</p>
-<p>=== "pip"
-    Great! Just pip install.</p>
-<div class="highlight"><pre><span></span><code>```bash
-&gt; pip install -U gum-ai
-```
-</code></pre></div>
-<p>=== "From source"</p>
-<div class="highlight"><pre><span></span><code>```bash
-&gt; git clone git@github.com:GeneralUserModels/gum.git
-&gt; cd gum
-&gt; pip install --editable .
-```
-</code></pre></div>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Getting Started II: Starting a GUM server</p>
-<p>=== "OpenAI"
-    You can authenticate by setting the <code>OPENAI_API_KEY</code> env variable or passing <code>api_key</code> below.</p>
-<div class="highlight"><pre><span></span><code>```python linenums=&quot;1&quot;
-import asyncio
-from gum import gum
-from gum.observers import Screen    
-
-curr_gum = gum(model=&quot;gpt-4.1&quot;, api_key=&quot;...&quot;)
-```
-</code></pre></div>
-<p>=== "Local LMs on a GPU server"
-      First, install <a href="https://sgl-project.github.io/start/install.html">SGLang</a> and launch its server with your LM.</p>
-<div class="highlight"><pre><span></span><code>  ```bash
-  &gt; pip install &quot;sglang[all]&quot;
-  &gt; pip install flashinfer -i https://flashinfer.ai/whl/cu121/torch2.4/ 
-
-  &gt; CUDA_VISIBLE_DEVICES=0 python -m sglang.launch_server ....
-  ```
-
-Next, connect to your local LM from your code as an `OpenAI`-compatible endpoint.
-
-```python linenums=&quot;1&quot;
-import asyncio
-from gum import gum
-from gum.observers import Screen    
-
-curr_gum = gum(model=&quot;gpt-4.1&quot;, api_key=&quot;...&quot;, api_base=&quot;...&quot;)
-```
-</code></pre></div>
-</div>
-<h1 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h1>
-<p>Once you're all set up, check out the tutorials here. There are a host of cool applications you can build atop of GUMs.</p>
-<p>To start...</p>
-<h1 id="under-the-hood">Under the hood<a class="headerlink" href="#under-the-hood" title="Permanent link">&para;</a></h1>
-<h2 id="1-observers-collect-raw-interaction-data">1) <strong>Observers</strong> collect raw interaction data.<a class="headerlink" href="#1-observers-collect-raw-interaction-data" title="Permanent link">&para;</a></h2>
-<h2 id="2-audits-optionally-filter-sensitive-observations-for-privacy">2) <strong>Audits</strong> optionally filter sensitive observations for privacy.<a class="headerlink" href="#2-audits-optionally-filter-sensitive-observations-for-privacy" title="Permanent link">&para;</a></h2>
-<h2 id="3-propositions-describe-inferences-made-about-the-user">3) <strong>Propositions</strong> describe inferences made about the user.<a class="headerlink" href="#3-propositions-describe-inferences-made-about-the-user" title="Permanent link">&para;</a></h2>
-<h2 id="4-retrieving-from-propositions-enables-a-range-of-interactive-applications">4) <strong>Retrieving</strong> from propositions enables a range of interactive applications.<a class="headerlink" href="#4-retrieving-from-propositions-enables-a-range-of-interactive-applications" title="Permanent link">&para;</a></h2>
-
-
-
-
-
 
 
   
   
 
 
+<h1 id="using-mcps-to-connect-to-gums">Using MCPs to connect to GUMs<a class="headerlink" href="#using-mcps-to-connect-to-gums" title="Permanent link">&para;</a></h1>
 
 
-  
+
+
+
+
+
+
+
 
 
 
@@ -756,10 +686,10 @@ curr_gum = gum(model=&quot;gpt-4.1&quot;, api_key=&quot;...&quot;, api_base=&quo
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.highlight", "search.share"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
