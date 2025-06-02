@@ -28,9 +28,6 @@
     
       <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
       
-        
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
-      
       
 
 
@@ -60,12 +57,7 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -115,8 +107,8 @@
       </div>
     </div>
     
-      
     
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -385,36 +377,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-observers-collect-raw-interaction-data" class="md-nav__link">
+  <a href="#observers-collect-raw-interaction-data" class="md-nav__link">
     <span class="md-ellipsis">
-      1) Observers collect raw interaction data.
+      Observers collect raw interaction data.
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-audits-optionally-filter-sensitive-observations-for-privacy" class="md-nav__link">
+  <a href="#propositions-describe-inferences-made-about-the-user" class="md-nav__link">
     <span class="md-ellipsis">
-      2) Audits optionally filter sensitive observations for privacy.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-propositions-describe-inferences-made-about-the-user" class="md-nav__link">
-    <span class="md-ellipsis">
-      3) Propositions describe inferences made about the user.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-retrieving-from-propositions-enables-a-range-of-interactive" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Retrieving from propositions enables a range of interactive
+      Propositions describe inferences made about the user.
     </span>
   </a>
   
@@ -755,36 +729,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-observers-collect-raw-interaction-data" class="md-nav__link">
+  <a href="#observers-collect-raw-interaction-data" class="md-nav__link">
     <span class="md-ellipsis">
-      1) Observers collect raw interaction data.
+      Observers collect raw interaction data.
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-audits-optionally-filter-sensitive-observations-for-privacy" class="md-nav__link">
+  <a href="#propositions-describe-inferences-made-about-the-user" class="md-nav__link">
     <span class="md-ellipsis">
-      2) Audits optionally filter sensitive observations for privacy.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-propositions-describe-inferences-made-about-the-user" class="md-nav__link">
-    <span class="md-ellipsis">
-      3) Propositions describe inferences made about the user.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-retrieving-from-propositions-enables-a-range-of-interactive" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Retrieving from propositions enables a range of interactive
+      Propositions describe inferences made about the user.
     </span>
   </a>
   
@@ -817,6 +773,10 @@
 
 
 <h1 id="general-user-models">General User Models<a class="headerlink" href="#general-user-models" title="Permanent link">&para;</a></h1>
+<div style="text-align: center;">
+<img src="fig1.jpg" alt="Figure 1" width="60%" />
+</div>
+
 <p>General User Models learn about you by observing <em>any</em> interaction you have with your computer. The GUM takes as input any unstructured observation of a user (e.g., device screenshots) and constructs confidence-weighted propositions that capture the user's knowledge and preferences. GUMs introduce an architecture that infers new propositions about a user from multimodal observations, retrieves related propositions for context, and continuously revises existing propositions.</p>
 <p><em>tl;dr</em> Everything you do can be used to make your systems more context-aware.</p>
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
@@ -861,57 +821,65 @@
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>&gt;<span class="w"> </span><span class="c1"># point this to the VLM</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>&gt;<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SCREEN_LM_API_BASE</span><span class="o">=</span><span class="s2">&quot;screen-base-url&quot;</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>&gt;<span class="w"> </span>gum<span class="w"> </span>--user-name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
 </span></code></pre></div>
 <p>Alternatively, we recommend using <a href="https://docs.skypilot.co/en/latest/docs/index.html">SkyPilot</a> to serve and run your own models on the cloud.</p>
 </div>
 <div class="tabbed-block">
 <p>You can authenticate by setting the <code>OPENAI_API_KEY</code> env variable.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&gt;<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;your-api-key-here&quot;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>&gt;<span class="w"> </span>gum<span class="w"> </span>--user-name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
 </span></code></pre></div>
 </div>
 </div>
 </div>
+<p>Start the GUM listening process up:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&gt;<span class="w"> </span>gum<span class="w"> </span>--user-name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Required Permissions</p>
+<p>When you first run this command, your system will prompt you to grant accessibility and screen recording permissions to the application. You may need to restart the process a few times as you grant these permissions. This is necessary for GUM to observe your interactions and build its model.</p>
+</div>
 <p>Once you're all done, go ahead and try querying your GUM to view propositions and observations:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&gt;<span class="w"> </span>gum<span class="w"> </span>--query<span class="w"> </span><span class="s2">&quot;email&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&gt;<span class="w"> </span>gum<span class="w"> </span>--query<span class="w"> </span><span class="s2">&quot;email&quot;</span>
 </span></code></pre></div>
 </div>
 <h2 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h2>
-<p>Once you're all set up, check out the tutorials here. There are a host of cool applications you can build atop of GUMs.</p>
+<p>Once you're all set up, check out the tutorials <a href="tutorials/mcp/">here.</a> There are a host of cool applications you can build atop of GUMs.</p>
 <div class="admonition info">
 <p class="admonition-title">Getting Started III: Querying GUMs with the API</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span>
-<span class="normal"><a href="#__codelineno-5-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">gum</span><span class="w"> </span><span class="kn">import</span> <span class="n">gum</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">gum_instance</span> <span class="o">=</span> <span class="n">gum</span><span class="p">(</span><span class="s2">&quot;Your Name&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4.1&quot;</span><span class="p">)</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a>    <span class="k">await</span> <span class="n">gum_instance</span><span class="o">.</span><span class="n">connect_db</span><span class="p">()</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">gum_instance</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">))</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<p>One of the main methods you'll use to interface with the GUM is the query function. It's exactly what the CLI calls under the hood. Simply pass your query in as a parameter (uses BM25 under the hood). The query takes many more arguments, which you can read about here.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">gum</span><span class="w"> </span><span class="kn">import</span> <span class="n">gum</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">gum_instance</span> <span class="o">=</span> <span class="n">gum</span><span class="p">(</span><span class="s2">&quot;Your Name&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4.1&quot;</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a>    <span class="k">await</span> <span class="n">gum_instance</span><span class="o">.</span><span class="n">connect_db</span><span class="p">()</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">gum_instance</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">))</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
-<p>To start...</p>
+<p>To learn more, consider looking at our tutorials! To start, you can set up <a href="tutorials/mcp/">an MCP that uses GUMs here.</a></p>
 <h2 id="under-the-hood">Under the hood<a class="headerlink" href="#under-the-hood" title="Permanent link">&para;</a></h2>
-<h3 id="1-observers-collect-raw-interaction-data">1) <strong>Observers</strong> collect raw interaction data.<a class="headerlink" href="#1-observers-collect-raw-interaction-data" title="Permanent link">&para;</a></h3>
-<h3 id="2-audits-optionally-filter-sensitive-observations-for-privacy">2) <strong>Audits</strong> optionally filter sensitive observations for privacy.<a class="headerlink" href="#2-audits-optionally-filter-sensitive-observations-for-privacy" title="Permanent link">&para;</a></h3>
-<h3 id="3-propositions-describe-inferences-made-about-the-user">3) <strong>Propositions</strong> describe inferences made about the user.<a class="headerlink" href="#3-propositions-describe-inferences-made-about-the-user" title="Permanent link">&para;</a></h3>
-<h3 id="4-retrieving-from-propositions-enables-a-range-of-interactive">4) <strong>Retrieving</strong> from propositions enables a range of interactive<a class="headerlink" href="#4-retrieving-from-propositions-enables-a-range-of-interactive" title="Permanent link">&para;</a></h3>
-<p>applications.</p>
+<div style="text-align: center;">
+<img src="https://generalusermodels.github.io/final_pipeline.jpg" alt="GUM Pipeline" width="80%" />
+</div>
+
+<h3 id="observers-collect-raw-interaction-data"><strong>Observers</strong> collect raw interaction data.<a class="headerlink" href="#observers-collect-raw-interaction-data" title="Permanent link">&para;</a></h3>
+<p>Observers are modular components that capture various user interactions: screen content, notifications, etc. Each observer operates independently, streaming its observations to the GUM core for processing. We implement a <a href="api-reference/observers/">Screen observer</a> as an example.</p>
+<h3 id="propositions-describe-inferences-made-about-the-user"><strong>Propositions</strong> describe inferences made about the user.<a class="headerlink" href="#propositions-describe-inferences-made-about-the-user" title="Permanent link">&para;</a></h3>
+<p>The core of GUM is its proposition system, which transforms raw observations into structured knowledge. Each proposition carries a confidence score and connects to related information, continuously updating as new evidence arrives.</p>
 
 
 
