@@ -412,9 +412,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-retrieving-from-propositions-enables-a-range-of-interactive-applications" class="md-nav__link">
+  <a href="#4-retrieving-from-propositions-enables-a-range-of-interactive" class="md-nav__link">
     <span class="md-ellipsis">
-      4) Retrieving from propositions enables a range of interactive applications.
+      4) Retrieving from propositions enables a range of interactive
     </span>
   </a>
   
@@ -782,9 +782,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-retrieving-from-propositions-enables-a-range-of-interactive-applications" class="md-nav__link">
+  <a href="#4-retrieving-from-propositions-enables-a-range-of-interactive" class="md-nav__link">
     <span class="md-ellipsis">
-      4) Retrieving from propositions enables a range of interactive applications.
+      4) Retrieving from propositions enables a range of interactive
     </span>
   </a>
   
@@ -827,13 +827,13 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Great! Just pip install.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>gum-ai
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>gum-ai
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:GeneralUserModels/gum.git
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>gum
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>pip<span class="w"> </span>install<span class="w"> </span>--editable<span class="w"> </span>.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&gt;<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:GeneralUserModels/gum.git
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>gum
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--editable<span class="w"> </span>.
 </span></code></pre></div>
 </div>
 </div>
@@ -874,50 +874,44 @@
 </div>
 </div>
 </div>
-</div>
-<!-- !!! info "Getting Started II: Starting a GUM server"
-
-    === "OpenAI"
-        You can authenticate by setting the `OPENAI_API_KEY` env variable or passing `api_key` below.
-
-        <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">gum</span><span class="w"> </span><span class="kn">import</span> <span class="n">gum</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">gum.observers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Screen</span>    
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">curr_gum</span> <span class="o">=</span> <span class="n">gum</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4.1&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    === "Local LMs on a GPU server"
-          First, install [SGLang](https://sgl-project.github.io/start/install.html) and launch its server with your LM.
-
-          <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;sglang[all]&quot;</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>flashinfer<span class="w"> </span>-i<span class="w"> </span>https://flashinfer.ai/whl/cu121/torch2.4/<span class="w"> </span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>&gt;<span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>....
+<p>Once you're all done, go ahead and try querying your GUM to view propositions and observations:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&gt;<span class="w"> </span>gum<span class="w"> </span>--query<span class="w"> </span><span class="s2">&quot;email&quot;</span>
 </span></code></pre></div>
-
-        Next, connect to your local LM from your code as an `OpenAI`-compatible endpoint.
-
-        ```python linenums="1"
-        import asyncio
-        from gum import gum
-        from gum.observers import Screen    
-
-        curr_gum = gum(model="gpt-4.1", api_key="...", api_base="...")
-        ``` -->
-
+</div>
 <h2 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h2>
 <p>Once you're all set up, check out the tutorials here. There are a host of cool applications you can build atop of GUMs.</p>
+<div class="admonition info">
+<p class="admonition-title">Getting Started III: Querying GUMs with the API</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">gum</span><span class="w"> </span><span class="kn">import</span> <span class="n">gum</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">gum_instance</span> <span class="o">=</span> <span class="n">gum</span><span class="p">(</span><span class="s2">&quot;Your Name&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4.1&quot;</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a>    <span class="k">await</span> <span class="n">gum_instance</span><span class="o">.</span><span class="n">connect_db</span><span class="p">()</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">gum_instance</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">))</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
 <p>To start...</p>
 <h2 id="under-the-hood">Under the hood<a class="headerlink" href="#under-the-hood" title="Permanent link">&para;</a></h2>
 <h3 id="1-observers-collect-raw-interaction-data">1) <strong>Observers</strong> collect raw interaction data.<a class="headerlink" href="#1-observers-collect-raw-interaction-data" title="Permanent link">&para;</a></h3>
 <h3 id="2-audits-optionally-filter-sensitive-observations-for-privacy">2) <strong>Audits</strong> optionally filter sensitive observations for privacy.<a class="headerlink" href="#2-audits-optionally-filter-sensitive-observations-for-privacy" title="Permanent link">&para;</a></h3>
 <h3 id="3-propositions-describe-inferences-made-about-the-user">3) <strong>Propositions</strong> describe inferences made about the user.<a class="headerlink" href="#3-propositions-describe-inferences-made-about-the-user" title="Permanent link">&para;</a></h3>
-<h3 id="4-retrieving-from-propositions-enables-a-range-of-interactive-applications">4) <strong>Retrieving</strong> from propositions enables a range of interactive applications.<a class="headerlink" href="#4-retrieving-from-propositions-enables-a-range-of-interactive-applications" title="Permanent link">&para;</a></h3>
+<h3 id="4-retrieving-from-propositions-enables-a-range-of-interactive">4) <strong>Retrieving</strong> from propositions enables a range of interactive<a class="headerlink" href="#4-retrieving-from-propositions-enables-a-range-of-interactive" title="Permanent link">&para;</a></h3>
+<p>applications.</p>
 
 
 
