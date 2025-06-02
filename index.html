@@ -777,7 +777,7 @@
 <img src="fig1.jpg" alt="Figure 1" width="60%" />
 </div>
 
-<p>General User Models learn about you by observing <em>any</em> interaction you have with your computer. The GUM takes as input any unstructured observation of a user (e.g., device screenshots) and constructs confidence-weighted propositions that capture the user's knowledge and preferences. GUMs introduce an architecture that infers new propositions about a user from multimodal observations, retrieves related propositions for context, and continuously revises existing propositions.</p>
+<p>General User Models (GUMs) learn about you by observing <em>any</em> interaction you have with your computer. The GUM takes as input any unstructured observation of a user (e.g., device screenshots) and constructs confidence-weighted propositions that capture the user's knowledge and preferences. GUMs introduce an architecture that infers new propositions about a user from multimodal observations, retrieves related propositions for context, and continuously revises existing propositions.</p>
 <p><em>tl;dr</em> Everything you do can be used to make your systems more context-aware.</p>
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>First, you'll need to install the GUM package. There are two ways to do it:</p>
@@ -846,7 +846,7 @@
 <p>Once you're all set up, check out the tutorials <a href="tutorials/mcp/">here.</a> There are a host of cool applications you can build atop of GUMs.</p>
 <div class="admonition info">
 <p class="admonition-title">Getting Started III: Querying GUMs with the API</p>
-<p>One of the main methods you'll use to interface with the GUM is the query function. It's exactly what the CLI calls under the hood. Simply pass your query in as a parameter (uses BM25 under the hood). The query takes many more arguments, which you can read about here.</p>
+<p>One of the main methods you'll use to interface with the GUM is the query function. It's exactly what the CLI calls under the hood. Simply pass your query in as a parameter (uses BM25 under the hood). The query takes many more arguments, which you can read about <a href="api-reference/core/#gum.gum.gum.query">here.</a></p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -870,7 +870,7 @@
 </span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
-<p>To learn more, consider looking at our tutorials! To start, you can set up <a href="tutorials/mcp/">an MCP that uses GUMs here.</a></p>
+<p>For example: you can set up <a href="tutorials/mcp/">an MCP that uses GUMs here.</a></p>
 <h2 id="under-the-hood">Under the hood<a class="headerlink" href="#under-the-hood" title="Permanent link">&para;</a></h2>
 <div style="text-align: center;">
 <img src="https://generalusermodels.github.io/final_pipeline.jpg" alt="GUM Pipeline" width="80%" />

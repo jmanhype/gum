@@ -378,6 +378,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Model Context Protocol
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -389,6 +402,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-just-want-to-set-up-the-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      I just want to set up the MCP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -612,6 +662,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-just-want-to-set-up-the-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      I just want to set up the MCP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -630,6 +706,19 @@
 
 
 <h1 id="using-mcps-to-connect-to-gums">Using MCPs to connect to GUMs<a class="headerlink" href="#using-mcps-to-connect-to-gums" title="Permanent link">&para;</a></h1>
+<h2 id="i-just-want-to-set-up-the-mcp">I just want to set up the MCP<a class="headerlink" href="#i-just-want-to-set-up-the-mcp" title="Permanent link">&para;</a></h2>
+<p>If you want to get right to setting this up, just clone the <a href="https://github.com/GeneralUserModels/gum-mcp">MCP Repository</a> and run the following:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&gt;<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:GeneralUserModels/gum-mcp.git
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>gum-mcp
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--editable<span class="w"> </span>.
+</span></code></pre></div>
+<p>Create a .env file with your environment variables. Either <code>GUM_LM_API_BASE="gum-base-url"</code> and <code>SCREEN_LM_API_BASE="screen-base-url"</code>, if you're using an open source model <em>or</em> <code>OPENAI_API_KEY="api_key_here"</code> if you're using OpenAI models.</p>
+<p>Finally, install the MCP client:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&gt;<span class="w"> </span>mcp<span class="w"> </span>install<span class="w"> </span>server.py<span class="w"> </span>-f<span class="w"> </span>.env<span class="w"> </span>--with<span class="w"> </span>gum-ai
+</span></code></pre></div>
+<p>The MCP should then be enabled in the Claude app!</p>
+<h2 id="tutorial">Tutorial<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h2>
+<p>(coming soon!)</p>
 
 
 
