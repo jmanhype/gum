@@ -813,16 +813,17 @@
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>&gt;<span class="w"> </span><span class="c1"># Launch the screen VLM model</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>&gt;<span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>....
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>&gt;<span class="w"> </span><span class="c1"># Launch the GUM model (note- this can be the same model, so you don&#39;t have to launch two)</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>&gt;<span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>sglang.launch_server<span class="w"> </span>....
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>&gt;<span class="w"> </span><span class="c1"># point this to the GUM LM</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>&gt;<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">GUM_LM_API_BASE</span><span class="o">=</span><span class="s2">&quot;gum-base-url&quot;</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>&gt;<span class="w"> </span><span class="c1"># point this to the VLM</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>&gt;<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SCREEN_LM_API_BASE</span><span class="o">=</span><span class="s2">&quot;screen-base-url&quot;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>&gt;<span class="w"> </span><span class="c1"># point this to the GUM LM</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>&gt;<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">GUM_LM_API_BASE</span><span class="o">=</span><span class="s2">&quot;base-url&quot;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>&gt;<span class="w"> </span><span class="c1"># point this to the VLM</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>&gt;<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SCREEN_LM_API_BASE</span><span class="o">=</span><span class="s2">&quot;base-url&quot;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>&gt;<span class="w"> </span><span class="c1"># point this to the VLM</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>&gt;<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;None&quot;</span>
 </span></code></pre></div>
-<p>Alternatively, we recommend using <a href="https://docs.skypilot.co/en/latest/docs/index.html">SkyPilot</a> to serve and run your own models on the cloud.</p>
+<p>Alternatively, we recommend using <a href="https://docs.skypilot.co/en/latest/docs/index.html">SkyPilot</a> to serve and run your own models on the cloud. You can use the following <a href="">config.yaml</a> file in the repo. By default, we use Qwen 2.5 VL 32B (AWQ quanitized). A single H100 (80GB) should give you good enough throughput.</p>
 </div>
 <div class="tabbed-block">
 <p>You can authenticate by setting the <code>OPENAI_API_KEY</code> env variable.</p>
