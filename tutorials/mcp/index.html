@@ -707,14 +707,14 @@
 
 <h1 id="using-mcps-to-connect-to-gums">Using MCPs to connect to GUMs<a class="headerlink" href="#using-mcps-to-connect-to-gums" title="Permanent link">&para;</a></h1>
 <h2 id="i-just-want-to-set-up-the-mcp">I just want to set up the MCP<a class="headerlink" href="#i-just-want-to-set-up-the-mcp" title="Permanent link">&para;</a></h2>
-<p>First, you'll need to set up the GUM in general, and have it build some sense of your context. To do this, follow the instructions on <a href="../../">the front page here.</a>. You'll also need a client that supports MCP (e.g. the Claude Desktop app).</p>
-<p>Once you're done with that, just clone the <a href="https://github.com/GeneralUserModels/gum-mcp">MCP Repository</a> and run the following:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&gt;<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:GeneralUserModels/gum-mcp.git
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>gum-mcp
+<p>First, you'll need to set up the GUM in general, and have it build some sense of your context. To do this, follow the instructions on <a href="../../">the front page here.</a> You'll also need a client that supports MCP (e.g. the Claude Desktop app).</p>
+<p>Once you're done with that, just clone the <a href="https://github.com/GeneralUserModels/gumcp">MCP Repository</a> and run the following:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&gt;<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:GeneralUserModels/gumcp.git
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>gumcp
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>&gt;<span class="w"> </span><span class="c1"># maybe create a python environment :)</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--editable<span class="w"> </span>.
 </span></code></pre></div>
-<p>Create a .env file with your environment variables. All you need is a user name in the file (e.g.<code>USER_NAME="Omar Shaikh"</code>). In sum, the contents of your .env file looks something like this:</p>
+<p>Once you're in the gumcp folder, create a .env file with your environment variables. All you need is a user name in the file (e.g.<code>USER_NAME="Omar Shaikh"</code>). In sum, the contents of your .env file looks something like this:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">USER_NAME</span><span class="o">=</span><span class="s2">&quot;Omar Shaikh&quot;</span>
 </span></code></pre></div>
 <p>Finally, install the MCP client, pointing to the .env file:</p>
