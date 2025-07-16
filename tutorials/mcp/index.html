@@ -425,6 +425,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="I just want to set up the MCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-one-click-dxt-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: One-click .dxt file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-manual-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2: Manual Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -675,6 +699,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="I just want to set up the MCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-one-click-dxt-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: One-click .dxt file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-manual-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2: Manual Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -708,15 +756,24 @@
 <h1 id="using-mcps-to-connect-to-gums">Using MCPs to connect to GUMs<a class="headerlink" href="#using-mcps-to-connect-to-gums" title="Permanent link">&para;</a></h1>
 <h2 id="i-just-want-to-set-up-the-mcp">I just want to set up the MCP<a class="headerlink" href="#i-just-want-to-set-up-the-mcp" title="Permanent link">&para;</a></h2>
 <p>First, you'll need to set up the GUM in general and have it build some sense of your context. To do this, follow the instructions on <a href="../../">the front page here.</a>. You'll also need a client that supports MCP. One example client is the MacOS Claude Desktop app, which you can download <a href="https://claude.ai/download">here</a>. The Claude desktop app requires the uv package manager for MCP, so you'll need to follow <a href="https://docs.astral.sh/uv/getting-started/installation/">the instructions on the uv website</a> (or simply <code>brew install uv</code>).</p>
-<p>Once you're done with that, just clone the <a href="https://github.com/GeneralUserModels/gumcp">MCP Repository</a> and run the following:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&gt;<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:GeneralUserModels/gumcp.git
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>gumcp
+<div class="admonition note">
+<p class="admonition-title">If you didn't use brew, make sure sure uv is installed <em>globally</em></p>
+<p>Annoyingly, some apps (Claude) don't look at your local PATH. So if you didn't use brew, your uv might be in your local bin <code>~/.local/bin/uv</code>. You can test this by running <code>which uv</code>. Luckily, you can just set a symlink to fix this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo ln -s ~/.local/bin/uv /usr/local/bin/uv
+</span></code></pre></div>
+</div>
+<h3 id="option-1-one-click-dxt-file">Option 1: One-click .dxt file<a class="headerlink" href="#option-1-one-click-dxt-file" title="Permanent link">&para;</a></h3>
+<p>Download the .dxt file from the releases page here and just double-click. Make sure you've updated Claude to the lastest version.</p>
+<h3 id="option-2-manual-setup">Option 2: Manual Setup<a class="headerlink" href="#option-2-manual-setup" title="Permanent link">&para;</a></h3>
+<p>Clone the <a href="https://github.com/GeneralUserModels/gumcp">MCP Repository</a> and run the following:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&gt;<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:GeneralUserModels/gumcp.git
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>gumcp
 </span></code></pre></div>
 <p>In the gumcp folder, create a .env file with your environment variables. All you need is a user name in the file (e.g.<code>USER_NAME="Omar Shaikh"</code>). In sum, the contents of your .env file looks something like this:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">USER_NAME</span><span class="o">=</span><span class="s2">&quot;Omar Shaikh&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">USER_NAME</span><span class="o">=</span><span class="s2">&quot;Omar Shaikh&quot;</span>
 </span></code></pre></div>
 <p>Finally, install the MCP client, pointing to the .env file:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&gt;<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>mcp<span class="w"> </span>install<span class="w"> </span>server.py<span class="w"> </span>-f<span class="w"> </span>.env<span class="w"> </span>--with<span class="w"> </span>gum-ai
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&gt;<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>mcp<span class="w"> </span>install<span class="w"> </span>server.py<span class="w"> </span>-f<span class="w"> </span>.env<span class="w"> </span>--with<span class="w"> </span>gum-ai
 </span></code></pre></div>
 <p>The MCP should then be enabled in the Claude app!</p>
 <div class="admonition note">
