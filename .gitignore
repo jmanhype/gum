@@ -113,4 +113,7 @@ dmypy.json
 .pytype/
 
 # Cython debug symbols
-cython_debug/ .claude/
+cython_debug/
+
+# Claude Code
+.claude/
