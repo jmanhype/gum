@@ -72,6 +72,8 @@ class gum:
         api_key: str | None = None,
         min_batch_size: int = 5,
         max_batch_size: int = 50,
+        use_mlx: bool = False,
+        mlx_model: str = "mlx-community/Qwen2-VL-2B-Instruct-4bit",
     ):
         # basic paths
         data_directory = os.path.expanduser(data_directory)
@@ -101,10 +103,22 @@ class gum:
         self.revise_prompt = revise_prompt or REVISE_PROMPT
         self.audit_prompt = audit_prompt or AUDIT_PROMPT
 
-        self.client = AsyncOpenAI(
-            base_url=api_base or os.getenv("GUM_LM_API_BASE"), 
-            api_key=api_key or os.getenv("GUM_LM_API_KEY") or os.getenv("OPENAI_API_KEY") or "None"
-        )
+        # Choose backend: MLX or OpenAI
+        self.use_mlx = use_mlx
+
+        if use_mlx:
+            from .mlx_client import MLXClient
+            self.client = MLXClient(
+                model_name=mlx_model,
+                max_tokens=1000,
+                temperature=0.7,
+                verbose=(verbosity <= logging.DEBUG)
+            )
+        else:
+            self.client = AsyncOpenAI(
+                base_url=api_base or os.getenv("GUM_LM_API_BASE"),
+                api_key=api_key or os.getenv("GUM_LM_API_KEY") or os.getenv("OPENAI_API_KEY") or "None"
+            )
 
         self.engine = None
         self.Session = None
