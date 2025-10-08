@@ -207,10 +207,9 @@ class MLXClient:
         mx.clear_cache()
         gc.collect()
 
-        # Clean up markdown code fences if present (common in JSON responses)
-        # Clean for any structured output request
-        if response_format or "json" in prompt.lower() or "{" in prompt:
-            response_text = self._clean_json_response(response_text)
+        # Always clean JSON responses from MLX models (they often have formatting issues)
+        # This is especially important for smaller models like 2B
+        response_text = self._clean_json_response(response_text)
 
         return MLXChatCompletion(response_text)
 
