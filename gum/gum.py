@@ -316,7 +316,14 @@ class gum:
             response_format=get_schema(schema),
         )
 
-        return json.loads(rsp.choices[0].message.content)["propositions"]
+        # Handle both {"propositions": [...]} and [...] formats
+        parsed = json.loads(rsp.choices[0].message.content)
+        if isinstance(parsed, list):
+            return parsed  # Direct array format
+        elif isinstance(parsed, dict) and "propositions" in parsed:
+            return parsed["propositions"]  # Wrapped format
+        else:
+            raise ValueError(f"Unexpected response format: {type(parsed)}")
 
     async def _build_relation_prompt(self, all_props) -> str:
         """Build a prompt for analyzing relationships between propositions.
