@@ -8,11 +8,13 @@ from __future__ import annotations
 
 import asyncio
 import base64
+import gc
 import json
 import logging
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+import mlx.core as mx
 from mlx_vlm import load, generate
 from mlx_vlm.prompt_utils import apply_chat_template
 
@@ -200,6 +202,10 @@ class MLXClient:
             response_text = result.text
         else:
             response_text = str(result)
+
+        # Explicit memory cleanup after generation
+        mx.metal.clear_cache()
+        gc.collect()
 
         # Clean up markdown code fences if present (common in JSON responses)
         # Clean for any structured output request
