@@ -31,7 +31,7 @@ async def main():
     # Create a screen observer with MLX backend
     screen = Screen(
         use_mlx=True,  # Enable MLX instead of OpenAI
-        mlx_model="mlx-community/Qwen2-VL-2B-Instruct-4bit",  # Lightweight 2B model
+        mlx_model="mlx-community/Qwen2.5-VL-7B-Instruct-4bit",  # 7B model for better JSON compliance
         screenshots_dir="~/.cache/gum/screenshots",
         skip_when_visible=["1Password", "Signal"],  # Skip these apps for privacy
         history_k=5,
@@ -44,7 +44,7 @@ async def main():
         model="unused",  # Model name is unused with MLX
         screen,
         use_mlx=True,  # Enable MLX for text generation
-        mlx_model="mlx-community/Qwen2-VL-2B-Instruct-4bit",
+        mlx_model="mlx-community/Qwen2.5-VL-7B-Instruct-4bit",
         verbosity=logging.INFO,
         audit_enabled=False,
         min_batch_size=3,
@@ -54,8 +54,8 @@ async def main():
         print("GUM is running with LOCAL MLX models!")
         print("="*60)
         print("\nConfiguration:")
-        print(f"  - Vision Model: mlx-community/Qwen2-VL-2B-Instruct-4bit")
-        print(f"  - Text Model: mlx-community/Qwen2-VL-2B-Instruct-4bit")
+        print(f"  - Vision Model: mlx-community/Qwen2.5-VL-7B-Instruct-4bit")
+        print(f"  - Text Model: mlx-community/Qwen2.5-VL-7B-Instruct-4bit")
         print(f"  - Backend: MLX (Apple Silicon)")
         print(f"  - Cost: $0.00 (completely free!)")
         print(f"  - Privacy: 100% local (no data sent to cloud)")
