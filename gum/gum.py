@@ -368,7 +368,14 @@ class gum:
             response_format=get_schema(RelationSchema.model_json_schema()),
         )
 
-        data = RelationSchema.model_validate_json(rsp.choices[0].message.content)
+        # Handle both {"relations": [...]} and [...] formats
+        content = rsp.choices[0].message.content
+        parsed = json.loads(content)
+        if isinstance(parsed, list):
+            # Direct array format - wrap it
+            content = json.dumps({"relations": parsed})
+
+        data = RelationSchema.model_validate_json(content)
 
         id_to_prop = {p.id: p for p in rel_props}
         ident, sim, unrel = set(), set(), set()
@@ -435,9 +442,17 @@ class gum:
         rsp = await self.client.chat.completions.create(
             model=self.model,
             messages=[{"role": "user", "content": prompt}],
-            response_format=get_schema(PropositionSchema.model_json_schema()), 
+            response_format=get_schema(PropositionSchema.model_json_schema()),
         )
-        return json.loads(rsp.choices[0].message.content)["propositions"]
+
+        # Handle both {"propositions": [...]} and [...] formats
+        parsed = json.loads(rsp.choices[0].message.content)
+        if isinstance(parsed, list):
+            return parsed  # Direct array format
+        elif isinstance(parsed, dict) and "propositions" in parsed:
+            return parsed["propositions"]  # Wrapped format
+        else:
+            raise ValueError(f"Unexpected response format: {type(parsed)}")
 
     async def _generate_and_search(
         self, session: AsyncSession, update: Update
