@@ -202,13 +202,14 @@ class MLXClient:
             response_text = str(result)
 
         # Clean up markdown code fences if present (common in JSON responses)
-        if response_format:
+        # Clean for any structured output request
+        if response_format or "json" in prompt.lower() or "{" in prompt:
             response_text = self._clean_json_response(response_text)
 
         return MLXChatCompletion(response_text)
 
     def _clean_json_response(self, text: str) -> str:
-        """Remove markdown code fences from JSON responses.
+        """Remove markdown code fences and fix common JSON issues.
 
         Args:
             text (str): Raw response text
@@ -216,6 +217,9 @@ class MLXClient:
         Returns:
             str: Cleaned text without markdown formatting
         """
+        import re
+        import json
+
         # Remove ```json and ``` markers
         text = text.strip()
         if text.startswith("```json"):
@@ -225,6 +229,105 @@ class MLXClient:
 
         if text.endswith("```"):
             text = text[:-3]  # Remove trailing ```
+
+        text = text.strip()
+
+        # Try to fix common JSON issues
+        # If the model wrapped the JSON in explanation text, try to extract just the JSON
+        if not text.startswith('{') and not text.startswith('['):
+            # Look for JSON object or array start
+            json_start = max(text.find('{'), text.find('['))
+            if json_start != -1:
+                text = text[json_start:]
+
+        # Remove any trailing text after the JSON
+        if text.startswith('{'):
+            # Find the matching closing brace
+            brace_count = 0
+            for i, char in enumerate(text):
+                if char == '{':
+                    brace_count += 1
+                elif char == '}':
+                    brace_count -= 1
+                    if brace_count == 0:
+                        text = text[:i+1]
+                        break
+        elif text.startswith('['):
+            # Find the matching closing bracket
+            bracket_count = 0
+            for i, char in enumerate(text):
+                if char == '[':
+                    bracket_count += 1
+                elif char == ']':
+                    bracket_count -= 1
+                    if bracket_count == 0:
+                        text = text[:i+1]
+                        break
+
+        text = text.strip()
+
+        # Fix smart quotes and unescaped quotes in JSON strings
+        # This is a common issue with LLMs
+        try:
+            # First try to parse - if it works, we're done
+            json.loads(text)
+            return text
+        except json.JSONDecodeError as e:
+            # Try to fix common issues
+            # Replace curly quotes with straight quotes
+            text = text.replace('\u201c', '"').replace('\u201d', '"')
+            text = text.replace('\u2018', "'").replace('\u2019', "'")
+
+            # Fix mismatched quotes (like 'text" or "text')
+            # Replace all single quotes with double quotes first
+            # This is aggressive but works for most LLM-generated JSON
+            lines = []
+            for line in text.split('\n'):
+                # Skip lines that are just brackets
+                if line.strip() in ['{', '}', '[', ']', ',']:
+                    lines.append(line)
+                    continue
+
+                # For lines with content, normalize quotes
+                # If we see a mix of ' and ", convert all to "
+                if ':' in line:  # This is a key-value pair
+                    # Find the value part (after the :)
+                    key_part, _, value_part = line.partition(':')
+
+                    # Keep the key part as-is
+                    # Fix the value part - replace all ' with " except escaped ones
+                    value_part = value_part.replace("\\'", "<<<ESCAPED_QUOTE>>>")
+                    value_part = value_part.replace("'", '"')
+                    value_part = value_part.replace("<<<ESCAPED_QUOTE>>>", "\\'")
+
+                    line = key_part + ':' + value_part
+
+                lines.append(line)
+
+            text = '\n'.join(lines)
+
+            # Try to parse again
+            try:
+                json.loads(text)
+                return text
+            except json.JSONDecodeError:
+                # Last resort: try to fix unescaped inner quotes
+                # Find all string values and escape inner quotes
+                import re
+
+                def fix_string_value(match):
+                    full_match = match.group(0)
+                    # Get the content between the outermost quotes
+                    content = match.group(1)
+                    # Escape any unescaped quotes inside
+                    content = content.replace('"', '\\"')
+                    return f'"{content}"'
+
+                # Match strings that might have unescaped quotes
+                # This regex matches: "..." where ... might contain unescaped "
+                text = re.sub(r'"([^"\\]*(?:\\.[^"\\]*)*)"', fix_string_value, text)
+
+                return text
 
         return text.strip()
 
