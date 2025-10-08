@@ -11,18 +11,19 @@ async def test_mlx_integration():
     print("Testing MLX Integration with GUM")
     print("="*60)
 
-    # Create GUM instance with MLX backend
+    # Create GUM instance with MLX backend using 7B model (better JSON compliance)
     async with gum(
         user_name="speed",
         model="unused",
         use_mlx=True,
-        mlx_model="mlx-community/Qwen2-VL-2B-Instruct-4bit",
+        mlx_model="mlx-community/Qwen2.5-VL-7B-Instruct-4bit",
         verbosity=logging.INFO,
         min_batch_size=1,
         max_batch_size=1
     ) as g:
         print("\n✅ GUM initialized with MLX backend")
-        print(f"   Model: mlx-community/Qwen2-VL-2B-Instruct-4bit")
+        print(f"   Model: mlx-community/Qwen2.5-VL-7B-Instruct-4bit (7B)")
+        print(f"   RAM Usage: ~4.5GB")
         print(f"   Cost: $0.00 (running locally!)")
 
         # Create a test observation
