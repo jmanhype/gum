@@ -204,7 +204,7 @@ class MLXClient:
             response_text = str(result)
 
         # Explicit memory cleanup after generation
-        mx.metal.clear_cache()
+        mx.clear_cache()
         gc.collect()
 
         # Clean up markdown code fences if present (common in JSON responses)
