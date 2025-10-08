@@ -99,7 +99,13 @@ async def main():
         async with gum(
             user_name,
             model,
-            Screen(model, use_mlx=use_mlx, mlx_model=mlx_model),
+            Screen(
+                model_name=model,
+                use_mlx=use_mlx,
+                mlx_model=mlx_model,
+                api_key=os.getenv('SCREEN_LM_API_KEY') or os.getenv('GUM_LM_API_KEY') or os.getenv('OPENAI_API_KEY'),
+                api_base=os.getenv('SCREEN_LM_API_BASE') or os.getenv('GUM_LM_API_BASE')
+            ),
             use_mlx=use_mlx,
             mlx_model=mlx_model,
             min_batch_size=min_batch_size,
